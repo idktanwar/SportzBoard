@@ -45,7 +45,7 @@ class MatchListTableCell: UITableViewCell {
         btnShowMatch.setTitle(title, for: .normal)
         btnShowMatch.layer.cornerRadius = 6.0
         btnShowMatch.sizeToFit()
-        
+        self.selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

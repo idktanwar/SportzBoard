@@ -23,7 +23,8 @@ class ViewController: UIViewController {
     
     //MARK: Methods
     func setupUI() {
-        self.view.backgroundColor = .systemBlue
+//        self.view.backgroundColor = .systemBlue
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         tblView.delegate = self
         tblView.rowHeight = UITableView.automaticDimension
         tblView.separatorColor = .clear
