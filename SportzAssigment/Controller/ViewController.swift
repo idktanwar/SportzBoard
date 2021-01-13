@@ -80,7 +80,6 @@ extension ViewController: UITableViewDelegate,  UITableViewDataSource {
         cell.configureCell(match: matchData)
         cell.btnShowMatch.tag = indexPath.row
         cell.btnShowMatch.addTarget(self, action: #selector(showMatch), for: .touchUpInside)
-        cell.selectionStyle = .none
         cell.updateConstraintsIfNeeded()
         return cell
     }

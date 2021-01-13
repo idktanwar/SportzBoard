@@ -25,6 +25,7 @@ class DetailTableCell: UITableViewCell {
         super.awakeFromNib()
         battingview.layer.cornerRadius = 8
         bowlingView.layer.cornerRadius = 8
+        self.selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
