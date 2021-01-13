@@ -51,12 +51,36 @@ class MatchListTableCell: UITableViewCell {
     }
     
     func configureCell(match: MatchData) {
-        
+
         self.lblResult.text = match.matchdetail.result
+        let teamHome = match.matchdetail.teamHome
+        let teamAway = match.matchdetail.teamAway
         
-        let match = match.matchdetail.match
-        self.lblDateTime.text = Utils.app.convertDateFormater(match.date) + " | \(match.time)"
-        self.lblMatchTitle.text = match.number
+        let match1 = match.matchdetail.match
+        self.lblDateTime.text = Utils.app.convertDateFormater(match1.date) + " | \(match1.time)"
+        self.lblMatchTitle.text = match1.number
+        
+        let teamDict: [String: Team] = match.teams        
+        let team1 = teamDict[teamHome]
+        let team2 = teamDict[teamAway]
+        lblTeam1.text = team1?.nameShort
+        lblTeam2.text = team2?.nameShort
+        
+        let innings = match.innings
+        for inning in innings {
+            if inning.battingteam == teamHome {
+                lblTeam1Runs.text = "\(inning.total)/\(inning.wickets)"
+                lblTeam1Overs.text = "\(inning.overs)"
+            }
+            
+            if inning.battingteam == teamAway {
+                lblTeam2Runs.text = "\(inning.total)/\(inning.wickets)"
+                lblTeam2Overs.text = "\(inning.overs)"
+
+            }
+        }
+        
+        
     }
 
     //MARK:Actions
