@@ -101,17 +101,21 @@ extension DetailViewController: UITableViewDataSource,UITableViewDelegate {
                 
         if segmentMatch.selectedSegmentIndex == 0 {
             let player = playerInfoHome[indexPath.row]
-            cell.textLabel?.text = player.1.nameFull
+            cell.configureCell(player.1)
             return cell
         }
         else {
             let player = playerInfoAway[indexPath.row]
-            cell.textLabel?.text = player.1.nameFull
+            cell.configureCell(player.1)
             return cell
         }
-        
-        
-        
     }
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 155
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 25
+    }
 }
