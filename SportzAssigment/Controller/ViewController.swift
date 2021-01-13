@@ -70,6 +70,7 @@ extension ViewController: UITableViewDelegate,  UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "matchlistcell", for: indexPath) as! MatchListTableCell
         let matchData = matchVM.modelAt(indexPath.row)
         cell.configureCell(match: matchData)
+        cell.selectionStyle = .none
         cell.updateConstraintsIfNeeded()
         return cell
     }

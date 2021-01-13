@@ -12,14 +12,16 @@ class MatchListTableCell: UITableViewCell {
 
     //MARK:Properties
     @IBOutlet weak var mainView: UIView!
-    @IBOutlet weak var imgTeam1: UIImageView!
-    @IBOutlet weak var imgTeam2: UIImageView!
     @IBOutlet weak var lblTeam1: UILabel!
     @IBOutlet weak var lblTeam2: UILabel!
     @IBOutlet weak var lblResult: UILabel!
     @IBOutlet weak var btnShowMatch: UIButton!
     @IBOutlet weak var lblDateTime: UILabel!
     @IBOutlet weak var lblMatchTitle: UILabel!
+    @IBOutlet weak var lblTeam1Runs: UILabel!
+    @IBOutlet weak var lblTeam2Runs: UILabel!
+    @IBOutlet weak var lblTeam1Overs: UILabel!
+    @IBOutlet weak var lblTeam2Overs: UILabel!
     
     //MARK: Methods
     override func awakeFromNib() {
@@ -49,13 +51,12 @@ class MatchListTableCell: UITableViewCell {
     }
     
     func configureCell(match: MatchData) {
-        self.imgTeam1.image = UIImage(named: "team1")
-        self.imgTeam2.image = UIImage(named: "team2")
         
         self.lblResult.text = match.matchdetail.result
         
         let match = match.matchdetail.match
         self.lblDateTime.text = Utils.app.convertDateFormater(match.date) + " | \(match.time)"
+        self.lblMatchTitle.text = match.number
     }
 
     //MARK:Actions
