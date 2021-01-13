@@ -55,6 +55,7 @@ class DetailViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorColor = .clear
         
         tableView.reloadData()
     }
