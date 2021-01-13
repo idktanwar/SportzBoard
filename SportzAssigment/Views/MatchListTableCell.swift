@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ShowButtonDidSelect {
+    func showTheMatchDetail(atIndex: Int)
+}
+
 class MatchListTableCell: UITableViewCell {
 
     //MARK:Properties
@@ -46,13 +50,12 @@ class MatchListTableCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func configureCell(match: MatchData) {
 
         self.lblResult.text = match.matchdetail.result
+        //fist data showing for home team & second data in cell is for away team
         let teamHome = match.matchdetail.teamHome
         let teamAway = match.matchdetail.teamAway
         
@@ -79,8 +82,6 @@ class MatchListTableCell: UITableViewCell {
 
             }
         }
-        
-        
     }
 
     //MARK:Actions

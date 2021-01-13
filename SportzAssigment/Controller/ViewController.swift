@@ -53,6 +53,13 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    @objc func showMatch(_ sender: UIButton) {
+        let match = matchVM.modelAt(sender.tag)
+        let viewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        viewController.matchVM = match
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 
 }
 
@@ -70,6 +77,8 @@ extension ViewController: UITableViewDelegate,  UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "matchlistcell", for: indexPath) as! MatchListTableCell
         let matchData = matchVM.modelAt(indexPath.row)
         cell.configureCell(match: matchData)
+        cell.btnShowMatch.tag = indexPath.row
+        cell.btnShowMatch.addTarget(self, action: #selector(showMatch), for: .touchUpInside)
         cell.selectionStyle = .none
         cell.updateConstraintsIfNeeded()
         return cell
@@ -78,4 +87,7 @@ extension ViewController: UITableViewDelegate,  UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 210
     }
+    
+    
+    
 }

@@ -26,7 +26,6 @@ struct MatchDataViewModel {
         return self.matchData[index]
     }
     
-    
 }
 
 

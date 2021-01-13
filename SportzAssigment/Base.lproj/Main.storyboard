@@ -208,6 +208,61 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="ec3-kg-VkE">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dS7-TK-mZw" customClass="DetailViewController" customModule="SportzAssigment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tfa-HZ-1BC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eMo-6P-8PU">
+                                <rect key="frame" x="0.0" y="44" width="414" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="SegmentChanged:" destination="dS7-TK-mZw" eventType="valueChanged" id="dCC-ly-x8n"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4P0-Sr-gAK">
+                                <rect key="frame" x="0.0" y="75" width="414" height="787"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailcell" id="ctP-nH-H3u" customClass="DetailTableCell" customModule="SportzAssigment" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ctP-nH-H3u" id="xY7-tH-QDB">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="eMo-6P-8PU" firstAttribute="leading" secondItem="crq-Em-zaQ" secondAttribute="leading" id="0E2-5r-cgB"/>
+                            <constraint firstItem="4P0-Sr-gAK" firstAttribute="leading" secondItem="crq-Em-zaQ" secondAttribute="leading" id="7v0-yi-4fy"/>
+                            <constraint firstItem="eMo-6P-8PU" firstAttribute="top" secondItem="crq-Em-zaQ" secondAttribute="top" id="9v3-Nt-sEo"/>
+                            <constraint firstAttribute="trailing" secondItem="4P0-Sr-gAK" secondAttribute="trailing" id="EUc-Ii-nM4"/>
+                            <constraint firstItem="crq-Em-zaQ" firstAttribute="trailing" secondItem="eMo-6P-8PU" secondAttribute="trailing" id="lev-Os-BhM"/>
+                            <constraint firstItem="4P0-Sr-gAK" firstAttribute="top" secondItem="eMo-6P-8PU" secondAttribute="bottom" id="nfk-7u-yBZ"/>
+                            <constraint firstItem="4P0-Sr-gAK" firstAttribute="bottom" secondItem="crq-Em-zaQ" secondAttribute="bottom" id="pDp-jm-6mm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="crq-Em-zaQ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OvY-Ht-UEd"/>
+                    <connections>
+                        <outlet property="segmentMatch" destination="eMo-6P-8PU" id="k05-8d-25Z"/>
+                        <outlet property="tableView" destination="4P0-Sr-gAK" id="XBf-hu-JcJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Efn-8d-8BR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1834.7826086956522" y="91.741071428571431"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Rpl-iV-m7l">
             <objects>
